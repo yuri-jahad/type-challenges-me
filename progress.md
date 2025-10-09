@@ -46,3 +46,12 @@ type TupleToObject<T extends readonly any[]> = {
 ```typescript
 type First<T extends any[]> = T extends [infer K, ...any[]] ? K : never
 ```
+### [18] LengthOfTuple
+
+- **Statut** : ✅ solved
+- **Date** : 09/10/2025
+- **Solution** :
+
+```typescript
+type Length<T extends readonly any[]> = T["length"] 
+```
