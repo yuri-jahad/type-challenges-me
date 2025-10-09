@@ -64,3 +64,17 @@ type Length<T extends readonly any[]> = T["length"]
 ```typescript
 type MyExclude<E, O> = E extends O ? never : E
 ```
+### [189] Awaited
+
+- **Statut** : ✅ solved
+- **Date** : 09/10/2025
+- **Solution** :
+
+```typescript
+type MyAwaited<T> = 
+  T extends PromiseLike<infer U>
+    ? U extends PromiseLike<any>
+      ? MyAwaited<U>
+      : U
+    : never
+```
