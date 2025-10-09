@@ -78,3 +78,12 @@ type MyAwaited<T> =
       : U
     : never
 ```
+### [268] If
+
+- **Statut** : ✅ solved
+- **Date** : 09/10/2025
+- **Solution** :
+
+```typescript
+type If<C extends boolean, T, F> =  C extends true ? T : F
+```
