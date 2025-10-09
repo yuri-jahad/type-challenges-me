@@ -87,3 +87,12 @@ type MyAwaited<T> =
 ```typescript
 type If<C extends boolean, T, F> =  C extends true ? T : F
 ```
+### [533] Concat
+
+- **Statut** : ✅ solved
+- **Date** : 09/10/2025
+- **Solution** :
+
+```typescript
+type Concat<T extends readonly any[], U extends readonly any[]> = [...T, ...U]
+```
