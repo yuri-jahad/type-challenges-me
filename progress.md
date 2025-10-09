@@ -25,3 +25,15 @@ type MyReadonly<T> = {
   readonly [K in keyof T]: T[K]
 }
 ```
+
+### [11] TupleToObject
+
+- **Statut** : ✅ solved
+- **Date** : 09/10/2025
+- **Solution** :
+
+```typescript
+type TupleToObject<T extends readonly any[]> = {
+  [K in T[number]]: K
+}
+```
