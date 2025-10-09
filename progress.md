@@ -55,3 +55,12 @@ type First<T extends any[]> = T extends [infer K, ...any[]] ? K : never
 ```typescript
 type Length<T extends readonly any[]> = T["length"] 
 ```
+### [43] Exclude
+
+- **Statut** : ✅ solved
+- **Date** : 09/10/2025
+- **Solution** :
+
+```typescript
+type MyExclude<E, O> = E extends O ? never : E
+```
