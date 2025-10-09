@@ -37,3 +37,12 @@ type TupleToObject<T extends readonly any[]> = {
   [K in T[number]]: K
 }
 ```
+### [14] FirstOfArray
+
+- **Statut** : ✅ solved
+- **Date** : 09/10/2025
+- **Solution** :
+
+```typescript
+type First<T extends any[]> = T extends [infer K, ...any[]] ? K : never
+```
