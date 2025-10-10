@@ -114,3 +114,12 @@ type Includes<T extends readonly any[], U> =
       : Includes<Rest, U>
     : false;
 ```
+### [3057] Push
+
+- **Statut** : ✅ solved
+- **Date** : 10/10/2025
+- **Solution** :
+
+```typescript
+type Push<T extends any[], U> = [...T, U]
+```
