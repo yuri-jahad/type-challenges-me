@@ -96,3 +96,21 @@ type If<C extends boolean, T, F> =  C extends true ? T : F
 ```typescript
 type Concat<T extends readonly any[], U extends readonly any[]> = [...T, ...U]
 ```
+### [898] Includes
+
+- **Statut** : ✅ solved
+- **Date** : 10/10/2025
+- **Solution** :
+
+```typescript
+type Equal<X, Y> =
+  (<T>() => T extends X ? 1 : 2) extends
+  (<T>() => T extends Y ? 1 : 2) ? true : false;
+
+type Includes<T extends readonly any[], U> = 
+  T extends [infer First, ...infer Rest]
+    ? Equal<First, U> extends true 
+      ? true 
+      : Includes<Rest, U>
+    : false;
+```
