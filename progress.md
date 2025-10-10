@@ -123,3 +123,12 @@ type Includes<T extends readonly any[], U> =
 ```typescript
 type Push<T extends any[], U> = [...T, U]
 ```
+### [3060] Unshift
+
+- **Statut** : ✅ solved
+- **Date** : 10/10/2025
+- **Solution** :
+
+```typescript
+type Unshift<T extends any[], U> = [U, ...T]
+```
