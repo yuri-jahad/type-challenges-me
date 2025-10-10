@@ -132,3 +132,13 @@ type Push<T extends any[], U> = [...T, U]
 ```typescript
 type Unshift<T extends any[], U> = [U, ...T]
 ```
+### [3312] Parameters
+
+- **Statut** : ✅ solved
+- **Date** : 10/10/2025
+- **Solution** :
+
+```typescript
+type MyParameters<T extends (...args: any[]) => any> = T extends (...args: infer P) => any ? P : never
+
+```
