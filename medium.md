@@ -1,0 +1,3 @@
+# typescript-progress-challenge
+
+## Medium
