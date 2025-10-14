@@ -32,4 +32,19 @@ type MyOmit<T, K extends keyof T> = {
 type MyReadonly2<T, K extends keyof T = keyof T> = 
   Omit<T, K> & Readonly<Pick<T, K>>
 ```
-g
+### [9] DeepReadonly
+
+- **Statut** : ✅ solved
+- **Date** : 14/10/2025
+- **Solution** :
+
+```typescript
+type DeepReadonly<T> = {
+  readonly [P in keyof T]: 
+    T[P] extends object         
+      ? T[P] extends Function    
+        ? T[P]                   
+        : DeepReadonly<T[P]>     
+      : T[P]                     
+}
+```
