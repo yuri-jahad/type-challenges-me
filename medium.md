@@ -48,3 +48,12 @@ type DeepReadonly<T> = {
       : T[P]                     
 }
 ```
+### [10] TupleToUnion
+
+- **Statut** : ✅ solved
+- **Date** : 15/10/2025
+- **Solution** :
+
+```typescript
+type TupleToUnion<T extends any[]> = T[number]
+```
